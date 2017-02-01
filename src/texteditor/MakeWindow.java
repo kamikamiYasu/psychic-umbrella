@@ -14,7 +14,14 @@ import java.io.*;
  *
  * @author god
  */
-public class MakeWindow {
+public class MakeWindow extends JFrame{
+    private Container container = new Container();
+    
+    MakeWindow(){
+        super("名無しのテキスト");
+        container.setLayout(new BorderLayout());
+    }
+    
     
     public void createWindow(){
         
@@ -22,7 +29,7 @@ public class MakeWindow {
 }
 
 class Myframe extends JFrame{
-    private Container container = new Container();
+    
     Myframe(){
         this("名無しのテキスト");
         
@@ -31,5 +38,7 @@ class Myframe extends JFrame{
         super(title);
         
     }
-            
+    public Container getContainer(){
+        return this. container;
+    }        
 }
