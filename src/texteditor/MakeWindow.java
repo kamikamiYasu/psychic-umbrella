@@ -28,17 +28,37 @@ public class MakeWindow extends JFrame{
     }
 }
 
-class Myframe extends JFrame{
+class EditorMenu extends JMenuBar{
     
-    Myframe(){
-        this("名無しのテキスト");
-        
+}
+
+abstract class AbstractMenu extends JMenu implements ActionListener{
+    JMenuItem[] mi;
+
+    public AbstractMenu(String menuTitle, String[] itemTitle) {
+        super(menuTitle);
+        for(int i = 0;i < mi.length;i++){
+            mi[i] = new JMenuItem(itemTitle[i]);
+            mi[i].addActionListener(this);
+            super.add(mi[i]);
+        }
     }
-    Myframe(String title){
-        super(title);
-        
-    }
-    public Container getContainer(){
-        return this. container;
-    }        
+    
+
+}
+
+class FileMenu extends AbstractMenu{
+    
+}
+
+class EditMenu extends AbstractMenu{
+    
+}
+
+class ViewMenu extends AbstractMenu{
+    
+}
+
+class HelpMenu extends AbstractMenu{
+    
 }
