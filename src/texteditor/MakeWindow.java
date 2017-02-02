@@ -43,12 +43,23 @@ abstract class AbstractMenu extends JMenu implements ActionListener{
             super.add(mi[i]);
         }
     }
+    public abstract void actionPerformed(ActionEvent e);
     
 
 }
 
 class FileMenu extends AbstractMenu{
-    
+    JTextArea ta = new JTextArea();
+     static final String[] itemTitle = {"新規作成","開く","上書き保存","名前をつけて保存"};
+
+    public FileMenu(JTextArea ta) {
+        super("ファイル", itemTitle);
+        this.ta = ta;
+        
+    }
+    public void actionPerformed(ActionEvent e){
+        
+    }
 }
 
 class EditMenu extends AbstractMenu{
