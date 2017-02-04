@@ -46,9 +46,10 @@ abstract class AbstractMenu extends JMenu implements ActionListener{
     public abstract void actionPerformed(ActionEvent e);
     
     public int MenuSwitch(Object o){
-        for(int i;i < mi.length;i++){
+        for(int i = 0;i < mi.length;i++){
             if(o.equals(mi[i])) return i;
         }
+        return 0;
     } 
 
 }
@@ -88,11 +89,20 @@ class FileMenu extends AbstractMenu{
                 break;
             default:
                 break;
-    }
+        }
     }
 }
 
 class EditMenu extends AbstractMenu{
+    JTextArea ta = new JTextArea();
+    static final String[] itemTitle = {"切り取り","コピー","ペースト","すべて選択"};
+
+    public EditMenu(JTextArea ta) {
+        super("編集",itemTitle);
+        this.ta = ta;
+    }
+    
+    
     
 }
 
